@@ -16,6 +16,8 @@ public class TestController {
     @Value("${testProperty2}")
     private String testValue;
 
+    private String anotherTestValue;
+
     @RequestMapping(value = "/test1")
     @ResponseBody
     public String testMethod1(){
@@ -34,4 +36,13 @@ public class TestController {
         return testValue;
     }
 
+    @RequestMapping(value = "/test4")
+    @ResponseBody
+    public String testMethod4(){
+        return anotherTestValue;
+    }
+
+    public void setAnotherTestValue(String anotherTestValue) {
+        this.anotherTestValue = anotherTestValue;
+    }
 }
